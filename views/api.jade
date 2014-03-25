@@ -176,5 +176,45 @@ block content
                                                           a(href='#', class='remove') Remove
                                           a(href='#', class='add-headers') Add Header
                                       // Create header fields and button to add/remove headers.
+
+                              - if (method.responses)
+                                  h5
+                                      span Response Variables
+                                  table.parameters
+                                      thead
+                                          tr
+                                              th Variable
+                                              th Type
+                                              th Example
+                                              th Location
+                                              th Description
+                                      tbody
+                                          - var paramCount =0
+                                          - each responsevar in method.responses
+                                              - paramCount++
+                                              div(id='param' + paramCount)
+                                                - var required =false
+                                                - var className =''
+                                                tr(class=className)
+                                                    td.name!=responsevar.Name
+                                                    td.type!=responsevar.Type
+                                                    td.example!=responsevar.Example
+                                                    td.location
+                                                        p!=responsevar.Location || 'query'
+                                                    td.description
+                                                        p!=responsevar.Description || 'No description'
+                                                        - if (responsevar.Type =='enumerated' && responsevar.EnumeratedDescription)
+                                                            dl.clearfix
+                                                                - each description, choice in responsevar.EnumeratedDescription
+                                                                    dt #{choice}
+                                                                    dd #{description}
+ 
+
+                              - if (method.ExampleResponse)
+                                  div.ExampleResponse
+                                      h5
+                                          span Example Response
+                                      p!= JSON.stringify(method.ExampleResponse, null, 4).split("\n").join("<br>").split(" ").join("&nbsp;")
+                              
                               - if (!method['read-only'])
                                   input(type='submit', id=method.MethodName, value='Try it!')

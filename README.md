@@ -569,7 +569,16 @@ You should look at the *./public/data/* directory for examples.
                 "Type":"boolean",
                 "Description":"If true, status not included"
              }
-        ]
+        ],
+        "responses":[
+             {
+                "Name":"user_id",
+                "Example" : "john.smith",
+                "Type":"string",
+                "Description":"The ID of the user",
+             },
+        ],
+        "ExampleResponse": {"example" : "This is a possible response from your object.", "nested" : {"another" :"awesome nested response object."}}
     }]
 }
 ```
@@ -611,6 +620,10 @@ Line:
 26. Each value in the list is a string.
 
 27. "Type" key value is *boolean* that will render a drop-down (select box) on the form for *true* and *false*.
+
+28. "ExampleResponse" allows you to provide an example response to the API call.
+
+29. "responses" follows a similar format to "parameters" except without the "Required" or "Default" fields, and with an additional "Example" field. This allows you to document how your responses are formatted.
 
 SUPPORT
 =======
