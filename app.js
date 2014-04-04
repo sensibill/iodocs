@@ -911,7 +911,7 @@ function checkPathForAPI(req, res, next) {
         // If api wasn't passed in as a parameter, check the path to see if it's there
         var pathName = req.url.replace('/','');
         // Is it a valid API - if there's a config file we can assume so
-        fs.stat(path.join(config.apiConfigDir, pathName + '.json'), function (error, stats) {
+        fs.stat(path.join(config.apiConfigDir, pathName + '.js'), function (error, stats) {
             if (stats) {
                 req.params.api = pathName;
             }
@@ -929,7 +929,7 @@ function dynamicHelpers(req, res, next) {
     if (req.params.api) {
         res.locals.apiInfo = apisConfig[req.params.api];
         res.locals.apiName = req.params.api;
-        res.locals.apiDefinition = require(path.join(config.apiConfigDir, req.params.api + '.json'));
+        res.locals.apiDefinition = require(path.join(config.apiConfigDir, req.params.api + '.js'));
         // If the cookie says we're authed for this particular API, set the session to authed as well
         if (req.session[req.params.api] && req.session[req.params.api]['authed']) {
             req.session['authed'] = true;
