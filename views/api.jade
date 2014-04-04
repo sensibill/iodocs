@@ -8,7 +8,8 @@ block content
   - else
       - var authed =''
 
-  form#credentials
+
+  //form#credentials
       input(type='hidden', name='apiName', value=apiName)
       - if (apiInfo.auth)
           section(class='credentials ' + authed)
@@ -96,8 +97,8 @@ block content
                               span.description !{method.Synopsis}
                               br
                               br
-                              //- if (method.parameters.length > 0)
-                              - if (method.parameters)
+                              //- if (method.parameters)
+                              - if (method.parameters.length > 0)
                                   table.parameters
                                       thead
                                           tr
@@ -216,5 +217,5 @@ block content
                                           span Example Response
                                       p!= JSON.stringify(method.ExampleResponse, null, 4).split("\n").join("<br>").split(" ").join("&nbsp;")
                               
-                              - if (!method['read-only'])
+                              //- if (!method['read-only'])
                                   input(type='submit', id=method.MethodName, value='Try it!')
