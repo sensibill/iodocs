@@ -1,6 +1,6 @@
 {
     "title" : "Sensibill API Documentation",
-    "address": "localhost:5002 /docs",
+    "address": "localhost:5002/docs",
     "port" : 3000,
     "apiConfigDir" : "./iodocs",
     "debug" : false,

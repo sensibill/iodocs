@@ -1,18 +1,17 @@
 {
     "title" : "Sensibill API Documentation",
-    "address": "localhost:5001/docs",
-    "port" : 3000,
+    "address": "sensibill.jit.su/docs",
     "apiConfigDir" : "./iodocs",
     "debug" : false,
     "sessionSecret" : "12345",
     "basicAuth" : {
-        "username" : "",
-        "password" : ""
+        "username" : "api",
+        "password" : "sens1b1ll"
     },
     "redis" : {
-        "host" : "localhost",
+        "host" : "nodejitsudb8212100453.redis.irstack.com",
         "port" : 6379,
-        "password" : "",
+        "password" : "nodejitsudb8212100453.redis.irstack.com:f327cfe980c971946e80b8e975fbebb4",
         "database" : "0"
     }
 }
