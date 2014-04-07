@@ -57,12 +57,14 @@ block content
 
   div(id='controls')
       ul
-          li
-              a#toggle-endpoints(href='#') Toggle All Endpoints
-          li
-              a#toggle-methods(href='#') Toggle All Methods
+            li
+                a#toggle-endpoints(href='#') Toggle All Endpoints
+            li
+                a#toggle-methods(href='#') Toggle All Methods
+            li
+                a(href = '/apiref/demo.html') RBC JQuery Demo
 
-  ul
+    ul
       - each endpoint in apiDefinition.endpoints
           li.endpoint
               h3.title

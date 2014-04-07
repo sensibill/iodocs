@@ -1,8 +1,8 @@
 {
-    "title" : "I/O Docs - http://github.com/mashery/iodocs",
-    "address": "0.0.0.0",
+    "title" : "Sensibill API Documentation",
+    "address": "localhost:5002 /docs",
     "port" : 3000,
-    "apiConfigDir" : "./public/data/",
+    "apiConfigDir" : "./iodocs",
     "debug" : false,
     "sessionSecret" : "12345",
     "basicAuth" : {
