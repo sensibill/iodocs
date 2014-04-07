@@ -61,7 +61,8 @@ block content
                 a#toggle-endpoints(href='#') Toggle All Endpoints
             li
                 a#toggle-methods(href='#') Toggle All Methods
-
+            li
+                a(href = '/apiref/demo.html') RBC JQuery Demo
     ul
         - each endpoint in apiDefinition.endpoints
             li.endpoint
@@ -93,7 +94,6 @@ block content
                                 input(type='hidden', name='oauth', value=secure)
                                 input(type='hidden', name='methodUri', value=method.URI)
                                 input(type='hidden', name='accessToken', id='accessToken')
-
                                 span.description !{method.Synopsis}
                                 br
                                 br
