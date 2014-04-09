@@ -1,6 +1,6 @@
 {
     "title" : "Sensibill API Documentation",
-    "address": "demo.jit.su/docs",
+    "address": "staging.sensibill.io/docs",
     "apiConfigDir" : "./iodocs",
     "debug" : false,
     "sessionSecret" : "12345",
