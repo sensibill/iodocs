@@ -9,9 +9,9 @@
         "password" : "sens1b1ll"
     },
     "redis" : {
-        "host" : "nodejitsudb8212100453.redis.irstack.com",
+        "host" : "localhost",
         "port" : 6379,
-        "password" : "nodejitsudb8212100453.redis.irstack.com:f327cfe980c971946e80b8e975fbebb4",
+        "password" : "",
         "database" : "0"
     }
 }
