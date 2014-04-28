@@ -244,7 +244,7 @@ block content
                                                     td.description!=code.description
                                     br
 
-                                - if (method.Errors.length>0)
+                                - if (method.Errors && method.Errors.length>0)
                                     h4.title
                                         span Errors
                                     p Note that this is not an exhaustive list of errors returned by this endpoint. There may be more possible errors that are not accounted for.
