@@ -244,5 +244,21 @@ block content
                                                     td.description!=code.description
                                     br
 
+                                - if (method.Errors.length>0)
+                                    h4.title
+                                        span Errors
+                                    p Note that this is not an exhaustive list of errors returned by this endpoint. There may be more possible errors that are not accounted for.
+                                    table.parameters
+                                        thead
+                                            tr
+                                                th Error
+                                                th Description
+                                        tbody
+                                            - each errorName in method.Errors
+                                                tr(class=className)
+                                                    td.error!=errorName
+                                                    td.description!=apiDefinition.errorDescriptions[errorName]
+                                    br
+
                                 //- if (!method['read-only'])
                                     input(type='submit', id=method.MethodName, value='Try it!')
