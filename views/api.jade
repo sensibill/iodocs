@@ -73,9 +73,10 @@ block content
                         li.list-methods
                             a(href='#') List Methods
                         li.expand-methods
-                            a(href='#') Expand Methods
+                            a(href='#') Expand Meth
                 - if (endpoint.methods.length)
                 ul.methods.hidden
+                    span.description !{endpoint.description}
                     - each method in endpoint.methods
                         - var httpmethod =method.HTTPMethod.toLowerCase()
                         - if (method.RequiresOAuth ==='Y' || method.RequiresOAuth ===true)
