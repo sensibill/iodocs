@@ -1,6 +1,6 @@
 extends layout
 block content
-    img(src="https://sandbox.sensibill.io/img/sensibill/sensibill-banner.png")
+    img(src="/apiref/images/sensibill-banner.png")
     - if (session.authed && apiInfo.oauth && apiInfo.oauth.type =='three-legged')
         - var authed ='authed'
     - else if (session.authed && apiInfo.oauth2)
