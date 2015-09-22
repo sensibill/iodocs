@@ -222,6 +222,24 @@ block content
                                                                         dd #{description}
                                     br
 
+                                - if (method.ExampleRequest)
+                                    div.ExampleRequest
+                                        h4.title
+                                            span Example Request
+                                        table
+                                            -if (method.ExampleRequest.method)
+                                                tr
+                                                    td Method
+                                                    td!= method.ExampleRequest.method
+                                            -if (method.ExampleRequest.url)
+                                                tr
+                                                    td URL
+                                                    td!= method.ExampleRequest.url
+                                            -if (method.ExampleRequest.body)
+                                                tr
+                                                    td Body
+                                                    td!= JSON.stringify(method.ExampleRequest.body, null, 4).split("\n").join("<br>").split(" ").join("&nbsp;")
+
 
                                 - if (method.ExampleResponse)
                                     div.ExampleResponse
