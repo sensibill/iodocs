@@ -224,7 +224,7 @@ block content
 
                                 - if (method.Examples)
                                     h4.title
-                                        span Examples
+                                        span Example Requests
                                     -each example in method.Examples
                                         table.parameters
                                             thead
@@ -240,6 +240,10 @@ block content
                                                     tr
                                                         td Request URL
                                                         td!= example.url
+                                                -if (example.header)
+                                                    tr
+                                                        td Request Header
+                                                        td!= JSON.stringify(example.header, null, 4).split("\n").join("<br>").split(" ").join("&nbsp;")
                                                 -if (example.body)
                                                     tr
                                                         td Request Body
