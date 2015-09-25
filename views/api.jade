@@ -224,7 +224,7 @@ block content
 
                                 - if (method.Examples)
                                     h4.title
-                                        span Example Requests
+                                        span Examples
                                     -each example in method.Examples
                                         table.parameters
                                             thead
@@ -251,7 +251,10 @@ block content
                                                 -if (example.response)
                                                     tr
                                                         td Response
-                                                        td!= JSON.stringify(example.response, null, 4).split("\n").join("<br>").split(" ").join("&nbsp;")
+                                                        -if (typeof(example.response) === 'object')
+                                                            td!= JSON.stringify(example.response, null, 4).split("\n").join("<br>").split(" ").join("&nbsp;")
+                                                        -else
+                                                            td!= example.response
                                         br                
 
                                 - if (method.StatusCodes)
